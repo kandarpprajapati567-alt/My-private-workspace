@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>K.K. Master Interface</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+
+    <!-- 🌌 Cinematic Universe Background -->
+    <!-- 'poster' इमेज डालना जरूरी है ताकि जब तक वीडियो लोड हो, तब तक स्क्रीन काली न लगे -->
+    <video id="universe-bg" autoplay loop muted playsinline poster="public/images/universe-poster.jpg">
+        <!-- फ्री और लाइटवेट यूनिवर्स वीडियो (इसे बाद में अपनी फाइल से बदल लेना) -->
+        <source src="https://cdn.pixabay.com/video/2020/05/25/40156-424754593_tiny.mp4" type="video/mp4">
+    </video>
+
+    <!-- ⬛ Blank Welcome Interface -->
+    <div id="welcome-screen" class="blank-overlay">
+        <h1 id="welcome-text" class="hidden"></h1>
+        <div id="onboarding-form" class="hidden">
+            <input type="text" id="name-input" placeholder="अपना नाम दर्ज करें..." autocomplete="off">
+            <button id="start-btn">प्रवेश करें</button>
+        </div>
+    </div>
+
+    <!-- 🎛️ Main Dashboard (Hidden initially) -->
+    <main id="app-dashboard" class="hidden">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="coins">🪙 <span id="coin-balance">0</span></div>
+            <div class="controls">
+                <button id="battery-saver-btn">🔋 Saver</button>
+            </div>
+        </header>
+
+        <!-- Dynamic Content Area -->
+        <section class="workspace-area">
+            <h2>द मास्टर डैशबोर्ड</h2>
+            <p>आपका BAMS प्राइवेट वर्कस्पेस तैयार है।</p>
+        </section>
+
+        <!-- Premium Bottom Nav -->
+        <nav class="bottom-nav">
+            <button class="nav-item active">📁 वर्कस्पेस</button>
+            <button class="nav-item">📚 लाइब्रेरी</button>
+            <button class="nav-item">🎙️ AI वाइवा</button>
+        </nav>
+    </main>
+
+    <script src="src/js/app.js"></script>
+</body>
+</html>
