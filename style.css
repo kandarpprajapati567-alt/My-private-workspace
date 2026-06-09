@@ -1,0 +1,62 @@
+/* Core Resets */
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+body { font-family: -apple-system, sans-serif; overflow: hidden; background: #000; color: #fff; }
+
+/* 🌌 Universe Video Styling */
+#universe-bg {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    object-fit: cover; z-index: -2; opacity: 0.6; /* हल्का डार्क इफ़ेक्ट */
+}
+
+/* ⬛ Blank Overlay & Welcome Screen */
+.blank-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: #000; /* प्योर ब्लैक स्टार्ट */
+    z-index: 100;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.hidden { display: none !important; }
+.fade-in { animation: fadeIn 1.5s forwards; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Onboarding Inputs */
+#name-input {
+    background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff; padding: 15px 20px; border-radius: 10px; font-size: 1rem;
+    text-align: center; margin-bottom: 20px; width: 250px; outline: none;
+}
+#start-btn {
+    background: #fff; color: #000; padding: 12px 30px; border: none;
+    border-radius: 30px; font-weight: bold; cursor: pointer; width: 250px;
+}
+
+/* App Dashboard UI */
+#app-dashboard {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+}
+
+.top-bar {
+    display: flex; justify-content: space-between; padding: 20px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+}
+
+.coins { font-weight: bold; font-size: 1.2rem; text-shadow: 0 2px 5px #000; }
+#battery-saver-btn { background: rgba(0,0,0,0.5); border: 1px solid #333; color: #fff; padding: 5px 15px; border-radius: 20px; }
+
+.workspace-area { flex: 1; padding: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+
+/* Bottom Nav */
+.bottom-nav {
+    display: flex; justify-content: space-around; padding: 15px;
+    background: rgba(10, 10, 10, 0.9); border-top: 1px solid #222;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+.nav-item { background: none; border: none; color: #888; font-size: 0.8rem; display: flex; flex-direction: column; gap: 5px; }
+.nav-item.active { color: #fff; font-weight: bold; }
